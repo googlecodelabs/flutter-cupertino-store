@@ -7,4 +7,17 @@ language.
 
 ## Getting Started
 
-TODO: add the getting started steps here. Link to codelab and the like.
+This contains the source code for a codelab working through the steps of 
+building a store app.
+
+  - `step-00` contains a Flutter app with a `CupertinoApp` containing
+    a titled `CupertinoPageScaffold`. This gives a starting point to add
+    structure and content to.
+  - `step-01` adds a data source with items for sale, and structure for
+    a three tab app using `CupertinoTabScaffold`.
+  - `step-02` lists products for sale in the product list tab.
+  - `step-03` adds searching products to the search tab.
+  - `step-04` starts filling in the final shopping cart tab.
+  - `step-05` adds a `CupertinoDatePicker` to the shopping cart tab.
+  - `step-06` finishes the shopping cart tab with a list of items in the cart.
+  
