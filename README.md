@@ -21,3 +21,10 @@ building a store app.
   - `step-05` adds a `CupertinoDatePicker` to the shopping cart tab.
   - `step-06` finishes the shopping cart tab with a list of items in the cart.
   
+<table >
+ <tr>
+  <td><img src='screenshots/product-list-tab.png' width='250' /></td>
+  <td><img src='screenshots/search-tab.png' width='250' /></td>
+  <td><img src='screenshots/shopping-cart-tab.png' width='250' /></td>
+ </tr>
+</table>
