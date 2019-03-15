@@ -16,17 +16,23 @@ import 'package:flutter/cupertino.dart';
 
 class SearchTab extends StatefulWidget {
   @override
-  _SearchTabState createState() => _SearchTabState();
+  _SearchTabState createState() {
+    return _SearchTabState();
+  }
 }
 
 class _SearchTabState extends State<SearchTab> {
   @override
-  Widget build(BuildContext context) => CupertinoTabView(
-        builder: (context) => CupertinoPageScaffold(
-              navigationBar: CupertinoNavigationBar(
-                middle: const Text('Search'),
-              ),
-              child: Container(),
-            ),
-      );
+  Widget build(BuildContext context) {
+    return CupertinoTabView(
+      builder: (context) {
+        return CupertinoPageScaffold(
+          navigationBar: CupertinoNavigationBar(
+            middle: const Text('Search'),
+          ),
+          child: Container(),
+        );
+      },
+    );
+  }
 }

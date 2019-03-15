@@ -30,28 +30,48 @@ class AppStateModel extends Model {
   // The IDs and quantities of products currently in the cart.
   final _productsInCart = <int, int>{};
 
-  Map<int, int> get productsInCart => Map.from(_productsInCart);
+  Map<int, int> get productsInCart {
+    return Map.from(_productsInCart);
+  }
 
   // Total number of items in the cart.
-  int get totalCartQuantity => _productsInCart.values.fold(0, (v, e) => v + e);
+  int get totalCartQuantity {
+    return _productsInCart.values.fold(0, (accumulator, value) {
+      return accumulator + value;
+    });
+  }
 
-  Category get selectedCategory => _selectedCategory;
+  Category get selectedCategory {
+    return _selectedCategory;
+  }
 
   // Totaled prices of the items in the cart.
-  double get subtotalCost => _productsInCart.keys
-      .map((id) => _availableProducts[id].price * _productsInCart[id])
-      .fold(0, (sum, e) => sum + e);
+  double get subtotalCost {
+    return _productsInCart.keys.map((id) {
+      // Extended price for product line
+      return _availableProducts[id].price * _productsInCart[id];
+    }).fold(0, (accumulator, extendedPrice) {
+      return accumulator + extendedPrice;
+    });
+  }
 
   // Total shipping cost for the items in the cart.
-  double get shippingCost =>
-      _shippingCostPerItem *
-      _productsInCart.values.fold(0.0, (sum, e) => sum + e);
+  double get shippingCost {
+    return _shippingCostPerItem *
+        _productsInCart.values.fold(0.0, (accumulator, itemCount) {
+          return accumulator + itemCount;
+        });
+  }
 
   // Sales tax for the items in the cart
-  double get tax => subtotalCost * _salesTaxRate;
+  double get tax {
+    return subtotalCost * _salesTaxRate;
+  }
 
   // Total cost to order everything in the cart.
-  double get totalCost => subtotalCost + shippingCost + tax;
+  double get totalCost {
+    return subtotalCost + shippingCost + tax;
+  }
 
   // Returns a copy of the list of available products, filtered by category.
   List<Product> getProducts() {
@@ -62,17 +82,18 @@ class AppStateModel extends Model {
     if (_selectedCategory == Category.all) {
       return List.from(_availableProducts);
     } else {
-      return _availableProducts
-          .where((p) => p.category == _selectedCategory)
-          .toList();
+      return _availableProducts.where((p) {
+        return p.category == _selectedCategory;
+      }).toList();
     }
   }
 
   // Search the product catalog
-  List<Product> search(String searchTerms) => getProducts()
-      .where((product) =>
-          product.name.toLowerCase().contains(searchTerms.toLowerCase()))
-      .toList();
+  List<Product> search(String searchTerms) {
+    return getProducts().where((product) {
+      return product.name.toLowerCase().contains(searchTerms.toLowerCase());
+    }).toList();
+  }
 
   // Adds a product to the cart.
   void addProductToCart(int productId) {
@@ -99,8 +120,9 @@ class AppStateModel extends Model {
   }
 
   // Returns the Product instance matching the provided id.
-  Product getProductById(int id) =>
-      _availableProducts.firstWhere((p) => p.id == id);
+  Product getProductById(int id) {
+    return _availableProducts.firstWhere((p) => p.id == id);
+  }
 
   // Removes everything from the cart.
   void clearCart() {

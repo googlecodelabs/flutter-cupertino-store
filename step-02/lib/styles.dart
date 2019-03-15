@@ -27,5 +27,4 @@ abstract class Styles {
   );
 
   static const Color appBackground = Color(0xffd0d0d0);
-
 }
