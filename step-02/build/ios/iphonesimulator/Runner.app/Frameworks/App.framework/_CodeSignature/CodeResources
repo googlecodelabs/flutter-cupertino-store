@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/LICENSE</key>
 		<data>
-		IsqPc7EX7hqnWH7TdFDJKCAgnjE=
+		XMIpOYjVWapJ3mhYzC3WphXjGFY=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		ZEKJZw+FKnfdkZJa56nE5tdrWGQ=
+		j02sibpRSWTGEv2bH6ljbEtgnhU=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		sT4fKHJnhiHRhIJ9wLn/6ONHaQA=
+		9Gpprsao5dFX3XT2cguK6nwdTkY=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -494,7 +494,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		tQwZd+rR8mZc8LrdB4uIXkRP+cg=
+		/XgFHs2x3IqpmQVzC4Xba6Kp/68=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -525,11 +525,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IsqPc7EX7hqnWH7TdFDJKCAgnjE=
+			XMIpOYjVWapJ3mhYzC3WphXjGFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			w4CVibHlzkLfKU610VH6vfFtBy89KVN8pOLUZRE2Acc=
+			vOZkpBx9J6ZpfAJE64dAVQ7FtcFBxLYEyLsrtNY75Iw=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
@@ -547,22 +547,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZEKJZw+FKnfdkZJa56nE5tdrWGQ=
+			j02sibpRSWTGEv2bH6ljbEtgnhU=
 			</data>
 			<key>hash2</key>
 			<data>
-			GmOTAPta9jKEQM9NBgkYguaLUrU3uviowVcUC9BzRoc=
+			EKP6m6h3jTy528BGZ20tg8AMxAz72CEOrpWMWT5EfQo=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sT4fKHJnhiHRhIJ9wLn/6ONHaQA=
+			9Gpprsao5dFX3XT2cguK6nwdTkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZSaViEbtBiY6AIqsDCLs/J6HPXVlv37jsYNk+svXm4c=
+			EjZs3NE+EJOcygn1v4aQfGWpiKwXxx/hYyb8IDtdyZs=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1834,11 +1834,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tQwZd+rR8mZc8LrdB4uIXkRP+cg=
+			/XgFHs2x3IqpmQVzC4Xba6Kp/68=
 			</data>
 			<key>hash2</key>
 			<data>
-			NiPuXYhRkde/ymYiiUw+wkflKgJ10wA/+9Ar25hAt9c=
+			RthoMOAw5HEotavHVPq7TiXItTxqBrfWbBxTMM6ak6M=
 			</data>
 		</dict>
 	</dict>
