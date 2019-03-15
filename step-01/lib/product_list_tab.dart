@@ -18,15 +18,19 @@ import 'model/app_state_model.dart';
 
 class ProductListTab extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => CupertinoPageScaffold(
-        child: ScopedModelDescendant<AppStateModel>(
-          builder: (context, child, model) => CustomScrollView(
-                slivers: <Widget>[
-                  CupertinoSliverNavigationBar(
-                    largeTitle: const Text('Cupertino Store'),
-                  ),
-                ],
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: ScopedModelDescendant<AppStateModel>(
+        builder: (context, child, model) {
+          return CustomScrollView(
+            slivers: <Widget>[
+              CupertinoSliverNavigationBar(
+                largeTitle: const Text('Cupertino Store'),
               ),
-        ),
-      );
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
