@@ -23,7 +23,9 @@ const double _kDateTimePickerHeight = 216;
 
 class ShoppingCartTab extends StatefulWidget {
   @override
-  _ShoppingCartTabState createState() => _ShoppingCartTabState();
+  _ShoppingCartTabState createState() {
+    return _ShoppingCartTabState();
+  }
 }
 
 class _ShoppingCartTabState extends State<ShoppingCartTab> {
@@ -34,214 +36,229 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
   DateTime dateTime = DateTime.now();
   final _currencyFormat = NumberFormat.currency(symbol: '\$');
 
-  Widget _buildNameField() => CupertinoTextField(
-        prefix: const Icon(
-          CupertinoIcons.person_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        textCapitalization: TextCapitalization.words,
-        autocorrect: false,
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildNameField() {
+    return CupertinoTextField(
+      prefix: const Icon(
+        CupertinoIcons.person_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.words,
+      autocorrect: false,
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Name',
-        onChanged: (newName) {
-          setState(() {
-            name = newName;
-          });
-        },
-      );
+      ),
+      placeholder: 'Name',
+      onChanged: (newName) {
+        setState(() {
+          name = newName;
+        });
+      },
+    );
+  }
 
-  Widget _buildEmailField() => const CupertinoTextField(
-        prefix: Icon(
-          CupertinoIcons.mail_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        keyboardType: TextInputType.emailAddress,
-        autocorrect: false,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildEmailField() {
+    return const CupertinoTextField(
+      prefix: Icon(
+        CupertinoIcons.mail_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      keyboardType: TextInputType.emailAddress,
+      autocorrect: false,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Email',
-      );
+      ),
+      placeholder: 'Email',
+    );
+  }
 
-  Widget _buildLocationField() => const CupertinoTextField(
-        prefix: Icon(
-          CupertinoIcons.location_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        textCapitalization: TextCapitalization.words,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildLocationField() {
+    return const CupertinoTextField(
+      prefix: Icon(
+        CupertinoIcons.location_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.words,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Location',
-      );
+      ),
+      placeholder: 'Location',
+    );
+  }
 
-  Widget _buildDateAndTimePicker(BuildContext context) => Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const <Widget>[
-                  Icon(
-                    CupertinoIcons.clock,
-                    color: CupertinoColors.lightBackgroundGray,
-                    size: 28,
+  Widget _buildDateAndTimePicker(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const <Widget>[
+                Icon(
+                  CupertinoIcons.clock,
+                  color: CupertinoColors.lightBackgroundGray,
+                  size: 28,
+                ),
+                SizedBox(width: 6),
+                Text(
+                  'Delivery time',
+                  style: TextStyle(
+                    color: Color(0xFFC2C2C2),
+                    fontWeight: FontWeight.w300,
                   ),
-                  SizedBox(width: 6),
-                  Text(
-                    'Delivery time',
-                    style: TextStyle(
-                      color: Color(0xFFC2C2C2),
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                ],
-              ),
-              Text(
-                DateFormat.yMMMd().add_jm().format(dateTime),
-                style: const TextStyle(color: CupertinoColors.inactiveGray),
-              ),
-            ],
-          ),
-          Container(
-            height: _kDateTimePickerHeight,
-            child: CupertinoDatePicker(
-              mode: CupertinoDatePickerMode.dateAndTime,
-              initialDateTime: dateTime,
-              onDateTimeChanged: (newDateTime) {
-                setState(() => dateTime = newDateTime);
-              },
+                ),
+              ],
             ),
+            Text(
+              DateFormat.yMMMd().add_jm().format(dateTime),
+              style: const TextStyle(color: CupertinoColors.inactiveGray),
+            ),
+          ],
+        ),
+        Container(
+          height: _kDateTimePickerHeight,
+          child: CupertinoDatePicker(
+            mode: CupertinoDatePickerMode.dateAndTime,
+            initialDateTime: dateTime,
+            onDateTimeChanged: (newDateTime) {
+              setState(() {
+                dateTime = newDateTime;
+              });
+            },
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 
   SliverChildBuilderDelegate _buildSliverChildBuilderDelegate(
-          AppStateModel model) =>
-      SliverChildBuilderDelegate(
-        (context, index) {
-          final productIndex = index - 4;
-          switch (index) {
-            case 0:
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildNameField(),
+      AppStateModel model) {
+    return SliverChildBuilderDelegate(
+      (context, index) {
+        final productIndex = index - 4;
+        switch (index) {
+          case 0:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildNameField(),
+            );
+          case 1:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildEmailField(),
+            );
+          case 2:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildLocationField(),
+            );
+          case 3:
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+              child: _buildDateAndTimePicker(context),
+            );
+          default:
+            if (model.productsInCart.length > productIndex) {
+              return ShoppingCartItem(
+                index: index,
+                product: model.getProductById(
+                    model.productsInCart.keys.toList()[productIndex]),
+                quantity: model.productsInCart.values.toList()[productIndex],
+                lastItem: productIndex == model.productsInCart.length - 1,
+                formatter: _currencyFormat,
               );
-            case 1:
+            } else if (model.productsInCart.keys.length == productIndex &&
+                model.productsInCart.isNotEmpty) {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildEmailField(),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        Text(
+                          'Shipping '
+                              '${_currencyFormat.format(model.shippingCost)}',
+                          style: Styles.productRowItemPrice,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          'Tax ${_currencyFormat.format(model.tax)}',
+                          style: Styles.productRowItemPrice,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          'Total  ${_currencyFormat.format(model.totalCost)}',
+                          style: Styles.productRowTotal,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               );
-            case 2:
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildLocationField(),
-              );
-            case 3:
-              return Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-                child: _buildDateAndTimePicker(context),
-              );
-            default:
-              if (model.productsInCart.length > productIndex) {
-                return ShoppingCartItem(
-                  index: index,
-                  product: model.getProductById(
-                      model.productsInCart.keys.toList()[productIndex]),
-                  quantity: model.productsInCart.values.toList()[productIndex],
-                  lastItem: productIndex == model.productsInCart.length - 1,
-                  formatter: _currencyFormat,
-                );
-              } else if (model.productsInCart.keys.length == productIndex &&
-                  model.productsInCart.isNotEmpty) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Text(
-                            'Shipping '
-                                '${_currencyFormat.format(model.shippingCost)}',
-                            style: Styles.productRowItemPrice,
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Tax ${_currencyFormat.format(model.tax)}',
-                            style: Styles.productRowItemPrice,
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Total  ${_currencyFormat.format(model.totalCost)}',
-                            style: Styles.productRowTotal,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              }
-          }
-          return null;
-        },
-      );
+            }
+        }
+        return null;
+      },
+    );
+  }
 
   @override
-  Widget build(BuildContext context) => CupertinoPageScaffold(
-        child: ScopedModelDescendant<AppStateModel>(
-          builder: (context, child, model) => CustomScrollView(
-                slivers: <Widget>[
-                  CupertinoSliverNavigationBar(
-                    largeTitle: const Text('Shopping Cart'),
-                  ),
-                  SliverPadding(
-                    // Top media padding consumed by
-                    // CupertinoSliverNavigationBar. Left/Right media padding
-                    // consumed by Tab1RowItem.
-                    padding: MediaQuery.of(context)
-                        .removePadding(
-                          removeTop: true,
-                          removeLeft: true,
-                          removeRight: true,
-                        )
-                        .padding,
-                    sliver: SliverList(
-                      delegate: _buildSliverChildBuilderDelegate(model),
-                    ),
-                  )
-                ],
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: ScopedModelDescendant<AppStateModel>(
+        builder: (context, child, model) {
+          return CustomScrollView(
+            slivers: <Widget>[
+              CupertinoSliverNavigationBar(
+                largeTitle: const Text('Shopping Cart'),
               ),
-        ),
-      );
+              SliverPadding(
+                // Top media padding consumed by
+                // CupertinoSliverNavigationBar. Left/Right media padding
+                // consumed by Tab1RowItem.
+                padding: MediaQuery.of(context)
+                    .removePadding(
+                      removeTop: true,
+                      removeLeft: true,
+                      removeRight: true,
+                    )
+                    .padding,
+                sliver: SliverList(
+                  delegate: _buildSliverChildBuilderDelegate(model),
+                ),
+              )
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
 
 class ShoppingCartItem extends StatelessWidget {

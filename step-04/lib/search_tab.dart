@@ -22,7 +22,9 @@ import 'styles.dart';
 
 class SearchTab extends StatefulWidget {
   @override
-  _SearchTabState createState() => _SearchTabState();
+  _SearchTabState createState() {
+    return _SearchTabState();
+  }
 }
 
 class _SearchTabState extends State<SearchTab> {
@@ -43,16 +45,20 @@ class _SearchTabState extends State<SearchTab> {
   }
 
   void _onTextChanged() {
-    setState(() => _terms = _controller.text);
+    setState(() {
+      _terms = _controller.text;
+    });
   }
 
-  Widget _createSearchBox() => Padding(
-        padding: const EdgeInsets.all(8),
-        child: SearchBar(
-          controller: _controller,
-          focusNode: _focusNode,
-        ),
-      );
+  Widget _createSearchBox() {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SearchBar(
+        controller: _controller,
+        focusNode: _focusNode,
+      ),
+    );
+  }
 
   List<Widget> _generateProductRows(List<Product> products) {
     final productListing = <Widget>[];
@@ -73,23 +79,25 @@ class _SearchTabState extends State<SearchTab> {
     final model = ScopedModel.of<AppStateModel>(context, rebuildOnChange: true);
 
     return CupertinoTabView(
-      builder: (context) => DecoratedBox(
-            decoration: const BoxDecoration(
-              color: Styles.scaffoldBackground,
-            ),
-            child: SafeArea(
-              child: Column(
-                children: [
-                  _createSearchBox(),
-                  Expanded(
-                    child: ListView(
-                      children: _generateProductRows(model.search(_terms)),
-                    ),
+      builder: (context) {
+        return DecoratedBox(
+          decoration: const BoxDecoration(
+            color: Styles.scaffoldBackground,
+          ),
+          child: SafeArea(
+            child: Column(
+              children: [
+                _createSearchBox(),
+                Expanded(
+                  child: ListView(
+                    children: _generateProductRows(model.search(_terms)),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
+        );
+      },
     );
   }
 }
