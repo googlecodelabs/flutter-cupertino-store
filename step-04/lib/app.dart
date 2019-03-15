@@ -20,50 +20,52 @@ import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => CupertinoApp(
-        title: 'Cupertino Store',
-        theme: const CupertinoThemeData(
-          textTheme: CupertinoTextThemeData(
-            navLargeTitleTextStyle: Styles.headlineText,
-          ),
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      title: 'Cupertino Store',
+      theme: const CupertinoThemeData(
+        textTheme: CupertinoTextThemeData(
+          navLargeTitleTextStyle: Styles.headlineText,
         ),
-        home: CupertinoStoreHomePage(),
-        color: Styles.appBackground,
-      );
+      ),
+      home: CupertinoStoreHomePage(),
+      color: Styles.appBackground,
+    );
+  }
 }
 
 class CupertinoStoreHomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.home),
-              title: Text('Products'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.search),
-              title: Text('Search'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.shopping_cart),
-              title: Text('Cart'),
-            ),
-          ],
-        ),
-        tabBuilder: (context, index) {
-          switch (index) {
-            case 0:
-              return ProductListTab();
-            case 1:
-              return SearchTab();
-            case 2:
-              return ShoppingCartTab();
-            default:
-              return Center(
-                child: Text('Unexpected tab #$index'),
-              );
-          }
-        },
-      );
+  Widget build(BuildContext context) {
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.home),
+            title: Text('Products'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.search),
+            title: Text('Search'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.shopping_cart),
+            title: Text('Cart'),
+          ),
+        ],
+      ),
+      tabBuilder: (context, index) {
+        switch (index) {
+          case 0:
+            return ProductListTab();
+          case 1:
+            return SearchTab();
+          case 2:
+            return ShoppingCartTab();
+          default:
+            assert(false, 'Unexpected tab index $index');
+        }
+      },
+    );
+  }
 }

@@ -18,7 +18,9 @@ import 'model/app_state_model.dart';
 
 class ShoppingCartTab extends StatefulWidget {
   @override
-  _ShoppingCartTabState createState() => _ShoppingCartTabState();
+  _ShoppingCartTabState createState() {
+    return _ShoppingCartTabState();
+  }
 }
 
 class _ShoppingCartTabState extends State<ShoppingCartTab> {
@@ -28,125 +30,136 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
   String pin;
   DateTime dateTime = DateTime.now();
 
-  Widget _buildNameField() => CupertinoTextField(
-        prefix: const Icon(
-          CupertinoIcons.person_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        textCapitalization: TextCapitalization.words,
-        autocorrect: false,
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildNameField() {
+    return CupertinoTextField(
+      prefix: const Icon(
+        CupertinoIcons.person_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.words,
+      autocorrect: false,
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Name',
-        onChanged: (newName) {
-          setState(() {
-            name = newName;
-          });
-        },
-      );
+      ),
+      placeholder: 'Name',
+      onChanged: (newName) {
+        setState(() {
+          name = newName;
+        });
+      },
+    );
+  }
 
-  Widget _buildEmailField() => const CupertinoTextField(
-        prefix: Icon(
-          CupertinoIcons.mail_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        keyboardType: TextInputType.emailAddress,
-        autocorrect: false,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildEmailField() {
+    return const CupertinoTextField(
+      prefix: Icon(
+        CupertinoIcons.mail_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      keyboardType: TextInputType.emailAddress,
+      autocorrect: false,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Email',
-      );
+      ),
+      placeholder: 'Email',
+    );
+  }
 
-  Widget _buildLocationField() => const CupertinoTextField(
-        prefix: Icon(
-          CupertinoIcons.location_solid,
-          color: CupertinoColors.lightBackgroundGray,
-          size: 28,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
-        clearButtonMode: OverlayVisibilityMode.editing,
-        textCapitalization: TextCapitalization.words,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0,
-              color: CupertinoColors.inactiveGray,
-            ),
+  Widget _buildLocationField() {
+    return const CupertinoTextField(
+      prefix: Icon(
+        CupertinoIcons.location_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.words,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 0,
+            color: CupertinoColors.inactiveGray,
           ),
         ),
-        placeholder: 'Location',
-      );
+      ),
+      placeholder: 'Location',
+    );
+  }
 
   SliverChildBuilderDelegate _buildSliverChildBuilderDelegate(
-          AppStateModel model) =>
-      SliverChildBuilderDelegate(
-        (context, index) {
-          switch (index) {
-            case 0:
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildNameField(),
-              );
-            case 1:
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildEmailField(),
-              );
-            case 2:
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _buildLocationField(),
-              );
-            default:
-              // Do nothing. For now.
-          }
-          return null;
-        },
-      );
+      AppStateModel model) {
+    return SliverChildBuilderDelegate(
+      (context, index) {
+        switch (index) {
+          case 0:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildNameField(),
+            );
+          case 1:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildEmailField(),
+            );
+          case 2:
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _buildLocationField(),
+            );
+          default:
+            // Do nothing. For now.
+        }
+        return null;
+      },
+    );
+  }
 
   @override
-  Widget build(BuildContext context) => CupertinoPageScaffold(
-        child: ScopedModelDescendant<AppStateModel>(
-          builder: (context, child, model) => CustomScrollView(
-                slivers: <Widget>[
-                  CupertinoSliverNavigationBar(
-                    largeTitle: const Text('Shopping Cart'),
-                  ),
-                  SliverPadding(
-                    // Top media padding consumed by
-                    // CupertinoSliverNavigationBar. Left/Right media padding
-                    // consumed by Tab1RowItem.
-                    padding: MediaQuery.of(context)
-                        .removePadding(
-                          removeTop: true,
-                          removeLeft: true,
-                          removeRight: true,
-                        )
-                        .padding,
-                    sliver: SliverList(
-                      delegate: _buildSliverChildBuilderDelegate(model),
-                    ),
-                  )
-                ],
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: ScopedModelDescendant<AppStateModel>(
+        builder: (context, child, model) {
+          return CustomScrollView(
+            slivers: <Widget>[
+              CupertinoSliverNavigationBar(
+                largeTitle: const Text('Shopping Cart'),
               ),
-        ),
-      );
+              SliverPadding(
+                // Top media padding consumed by
+                // CupertinoSliverNavigationBar. Left/Right media padding
+                // consumed by Tab1RowItem.
+                padding: MediaQuery.of(context)
+                    .removePadding(
+                      removeTop: true,
+                      removeLeft: true,
+                      removeRight: true,
+                    )
+                    .padding,
+                sliver: SliverList(
+                  delegate: _buildSliverChildBuilderDelegate(model),
+                ),
+              )
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
