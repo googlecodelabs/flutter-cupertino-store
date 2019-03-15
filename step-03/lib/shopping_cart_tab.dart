@@ -18,20 +18,26 @@ import 'model/app_state_model.dart';
 
 class ShoppingCartTab extends StatefulWidget {
   @override
-  _ShoppingCartTabState createState() => _ShoppingCartTabState();
+  _ShoppingCartTabState createState() {
+    return _ShoppingCartTabState();
+  }
 }
 
 class _ShoppingCartTabState extends State<ShoppingCartTab> {
   @override
-  Widget build(BuildContext context) => CupertinoPageScaffold(
-        child: ScopedModelDescendant<AppStateModel>(
-          builder: (context, child, model) => CustomScrollView(
-                slivers: <Widget>[
-                  CupertinoSliverNavigationBar(
-                    largeTitle: const Text('Shopping Cart'),
-                  ),
-                ],
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: ScopedModelDescendant<AppStateModel>(
+        builder: (context, child, model) {
+          return CustomScrollView(
+            slivers: <Widget>[
+              CupertinoSliverNavigationBar(
+                largeTitle: const Text('Shopping Cart'),
               ),
-        ),
-      );
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
