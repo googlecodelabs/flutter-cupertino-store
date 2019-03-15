@@ -17,24 +17,28 @@ import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => CupertinoApp(
-        title: 'Cupertino Store',
-        theme: const CupertinoThemeData(
-          textTheme: CupertinoTextThemeData(
-            navLargeTitleTextStyle: Styles.headlineText,
-          ),
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      title: 'Cupertino Store',
+      theme: const CupertinoThemeData(
+        textTheme: CupertinoTextThemeData(
+          navLargeTitleTextStyle: Styles.headlineText,
         ),
-        home: CupertinoStoreHomePage(),
-        color: Styles.appBackground,
-      );
+      ),
+      home: CupertinoStoreHomePage(),
+      color: Styles.appBackground,
+    );
+  }
 }
 
 class CupertinoStoreHomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => CupertinoPageScaffold(
-              navigationBar: CupertinoNavigationBar(
-                middle: const Text('Cupertino Store'),
-              ),
-              child: Container(),
-            );
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: const Text('Cupertino Store'),
+      ),
+      child: Container(),
+    );
+  }
 }
