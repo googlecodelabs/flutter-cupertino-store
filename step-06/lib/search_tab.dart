@@ -18,7 +18,6 @@ import 'model/app_state_model.dart';
 import 'model/product.dart';
 import 'product_row_item.dart';
 import 'search_bar.dart';
-import 'styles.dart';
 
 class SearchTab extends StatefulWidget {
   @override
@@ -80,21 +79,16 @@ class _SearchTabState extends State<SearchTab> {
 
     return CupertinoTabView(
       builder: (context) {
-        return DecoratedBox(
-          decoration: const BoxDecoration(
-            color: Styles.scaffoldBackground,
-          ),
-          child: SafeArea(
-            child: Column(
-              children: [
-                _createSearchBox(),
-                Expanded(
-                  child: ListView(
-                    children: _generateProductRows(model.search(_terms)),
-                  ),
+        return SafeArea(
+          child: Column(
+            children: [
+              _createSearchBox(),
+              Expanded(
+                child: ListView(
+                  children: _generateProductRows(model.search(_terms)),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },
