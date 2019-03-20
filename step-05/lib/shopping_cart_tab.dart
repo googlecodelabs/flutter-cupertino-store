@@ -178,7 +178,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
               child: _buildDateAndTimePicker(context),
             );
           default:
-            // Do nothing. For now.
+          // Do nothing. For now.
         }
         return null;
       },
