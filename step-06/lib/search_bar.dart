@@ -17,28 +17,40 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoTextField(
+    return DecoratedBox(
       decoration: BoxDecoration(
-        // color: Styles.searchBackground,
-        border: Border.all(color: CupertinoColors.inactiveGray),
+        color: Styles.searchBackground,
         borderRadius: BorderRadius.circular(10),
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 4,
-        vertical: 12,
-      ),
-      prefix: const Padding(
-        padding:  EdgeInsets.only(left: 10),
-        child:  Icon(
-          CupertinoIcons.search,
-          color: Styles.searchIconColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 4,
+          vertical: 8,
+        ),
+        child: Row(
+          children: [
+            const Icon(
+              CupertinoIcons.search,
+              color: Styles.searchIconColor,
+            ),
+            Expanded(
+              child: CupertinoTextField(
+                controller: controller,
+                focusNode: focusNode,
+                style: Styles.searchText,
+                cursorColor: Styles.searchCursorColor,
+              ),
+            ),
+            GestureDetector(
+              onTap: controller.clear,
+              child: const Icon(
+                CupertinoIcons.clear_thick_circled,
+                color: Styles.searchIconColor,
+              ),
+            ),
+          ],
         ),
       ),
-      controller: controller,
-      focusNode: focusNode,
-      style: Styles.searchText,
-      cursorColor: Styles.searchCursorColor,
-      clearButtonMode: OverlayVisibilityMode.always,
     );
   }
 }
