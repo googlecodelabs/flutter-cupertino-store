@@ -178,7 +178,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
               child: _buildDateAndTimePicker(context),
             );
           default:
-            // Do nothing. For now.
+          // Do nothing. For now.
         }
         return null;
       },
@@ -195,17 +195,9 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
               CupertinoSliverNavigationBar(
                 largeTitle: const Text('Shopping Cart'),
               ),
-              SliverPadding(
-                // Top media padding consumed by
-                // CupertinoSliverNavigationBar. Left/Right media padding
-                // consumed by Tab1RowItem.
-                padding: MediaQuery.of(context)
-                    .removePadding(
-                      removeTop: true,
-                      removeLeft: true,
-                      removeRight: true,
-                    )
-                    .padding,
+              SliverSafeArea(
+                top: false,
+                minimum: const EdgeInsets.only(top: 4),
                 sliver: SliverList(
                   delegate: _buildSliverChildBuilderDelegate(model),
                 ),

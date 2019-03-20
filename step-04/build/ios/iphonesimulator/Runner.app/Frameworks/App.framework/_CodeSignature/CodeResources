@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/LICENSE</key>
 		<data>
-		XMIpOYjVWapJ3mhYzC3WphXjGFY=
+		Cd6jwmfPAZc8byXMatPPVBX9IrI=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		j02sibpRSWTGEv2bH6ljbEtgnhU=
+		98s40fUD3bCbyShkANuizG1h7g0=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		vCsI+NG6/GKlnnKZvEDywcjQvCQ=
+		lWgKXzhiQWKEB144lAj2ZvCNQJA=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -494,7 +494,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		/XgFHs2x3IqpmQVzC4Xba6Kp/68=
+		3K/psdtD88tYGpi0jwlF7YmxupE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -525,11 +525,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XMIpOYjVWapJ3mhYzC3WphXjGFY=
+			Cd6jwmfPAZc8byXMatPPVBX9IrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			vOZkpBx9J6ZpfAJE64dAVQ7FtcFBxLYEyLsrtNY75Iw=
+			SmgiLhUJdRQXmxb5keebXmRXT0UUb9q6jNxZdYCnQZ8=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
@@ -547,22 +547,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j02sibpRSWTGEv2bH6ljbEtgnhU=
+			98s40fUD3bCbyShkANuizG1h7g0=
 			</data>
 			<key>hash2</key>
 			<data>
-			EKP6m6h3jTy528BGZ20tg8AMxAz72CEOrpWMWT5EfQo=
+			c1SfNsIX5SLBqYGjQo16M+JJR0KQY6uCGV/GqCf8H9c=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vCsI+NG6/GKlnnKZvEDywcjQvCQ=
+			lWgKXzhiQWKEB144lAj2ZvCNQJA=
 			</data>
 			<key>hash2</key>
 			<data>
-			WVJCHAO3/16H23hALa2j3U9AfAIEIacXCYueG4s+5kU=
+			l5i5ZH5k37TBw5tJcnnMuVNb2++jZuJDT2TgVjl7qJ4=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1834,17 +1834,17 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/XgFHs2x3IqpmQVzC4Xba6Kp/68=
+			3K/psdtD88tYGpi0jwlF7YmxupE=
 			</data>
 			<key>hash2</key>
 			<data>
-			RthoMOAw5HEotavHVPq7TiXItTxqBrfWbBxTMM6ak6M=
+			qZI748aMfo+p0L49L15nOFIuVnQxYiGIEDxFsHbzjKg=
 			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^.*</key>
+		<key>^</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -1875,12 +1875,24 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
+		<key>^</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
+		</dict>
+		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -1916,6 +1928,13 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
+		</dict>
+		<key>^[^/]+$</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>

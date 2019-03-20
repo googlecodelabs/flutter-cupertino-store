@@ -30,16 +30,9 @@ class ProductListTab extends StatelessWidget {
               CupertinoSliverNavigationBar(
                 largeTitle: const Text('Cupertino Store'),
               ),
-              SliverPadding(
-                // Top media padding consumed by CupertinoSliverNavigationBar.
-                // Left/Right media padding consumed by Tab1RowItem.
-                padding: MediaQuery.of(context)
-                    .removePadding(
-                      removeTop: true,
-                      removeLeft: true,
-                      removeRight: true,
-                    )
-                    .padding,
+              SliverSafeArea(
+                top: false,
+                minimum: const EdgeInsets.only(top: 8),
                 sliver: SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
