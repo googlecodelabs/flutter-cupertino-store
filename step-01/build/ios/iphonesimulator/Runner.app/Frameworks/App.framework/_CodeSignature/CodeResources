@@ -26,11 +26,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		98s40fUD3bCbyShkANuizG1h7g0=
+		JLgLtChkre1I79uYWLaGwXH9Hh4=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		c1rcwHqF2AwxlQj8yJl1KF5ktXE=
+		Zz30I4v3RJYS/9fcU9BjL9vSrzs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -494,7 +494,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		3K/psdtD88tYGpi0jwlF7YmxupE=
+		RBErW4csze1MPWAPm4yLDQ6Uoco=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -547,22 +547,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			98s40fUD3bCbyShkANuizG1h7g0=
+			JLgLtChkre1I79uYWLaGwXH9Hh4=
 			</data>
 			<key>hash2</key>
 			<data>
-			c1SfNsIX5SLBqYGjQo16M+JJR0KQY6uCGV/GqCf8H9c=
+			5sf9iKfT6jmDPu2T0GTiflVAFTtqzeMrmlF4Blir9Tk=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c1rcwHqF2AwxlQj8yJl1KF5ktXE=
+			Zz30I4v3RJYS/9fcU9BjL9vSrzs=
 			</data>
 			<key>hash2</key>
 			<data>
-			1O97maI60XpBnwcXfcHskM3Ksagsa+UXR2t77Wno1Nc=
+			MloVuWtvQX3EPbbq1jgKW7mfTrHQgRN7oFqfwuQ6qMY=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1834,17 +1834,17 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3K/psdtD88tYGpi0jwlF7YmxupE=
+			RBErW4csze1MPWAPm4yLDQ6Uoco=
 			</data>
 			<key>hash2</key>
 			<data>
-			qZI748aMfo+p0L49L15nOFIuVnQxYiGIEDxFsHbzjKg=
+			zGDeC1qop3F1V/0gty9VRJKbwEJI/OZ+7L4N6pCUWag=
 			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -1875,24 +1875,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -1928,13 +1916,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>
