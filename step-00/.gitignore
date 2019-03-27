@@ -25,7 +25,7 @@
 .packages
 .pub-cache/
 .pub/
-build/
+/build/
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -73,5 +73,3 @@ build/
 android/app/.classpath
 android/**/.project
 android/**/org.eclipse.buildship.core.prefs
-
-
