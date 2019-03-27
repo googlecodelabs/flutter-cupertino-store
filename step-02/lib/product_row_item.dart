@@ -101,7 +101,7 @@ class ProductRowItem extends StatelessWidget {
           ),
           child: Container(
             height: 1,
-            color: const Color(0xFFD9D9D9),
+            color: Styles.productRowDivider,
           ),
         ),
       ],

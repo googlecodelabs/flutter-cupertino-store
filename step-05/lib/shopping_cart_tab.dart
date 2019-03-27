@@ -16,6 +16,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'model/app_state_model.dart';
+import 'styles.dart';
 
 const double _kDateTimePickerHeight = 216;
 
@@ -123,16 +124,13 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                 SizedBox(width: 6),
                 Text(
                   'Delivery time',
-                  style: TextStyle(
-                    color: Color(0xFFC2C2C2),
-                    fontWeight: FontWeight.w300,
-                  ),
+                  style: Styles.deliveryTimeLabel,
                 ),
               ],
             ),
             Text(
               DateFormat.yMMMd().add_jm().format(dateTime),
-              style: const TextStyle(color: CupertinoColors.inactiveGray),
+              style: Styles.deliveryTime,
             ),
           ],
         ),

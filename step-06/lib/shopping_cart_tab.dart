@@ -126,16 +126,13 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                 SizedBox(width: 6),
                 Text(
                   'Delivery time',
-                  style: TextStyle(
-                    color: Color(0xFFC2C2C2),
-                    fontWeight: FontWeight.w300,
-                  ),
+                  style: Styles.deliveryTimeLabel,
                 ),
               ],
             ),
             Text(
               DateFormat.yMMMd().add_jm().format(dateTime),
-              style: const TextStyle(color: CupertinoColors.inactiveGray),
+              style: Styles.deliveryTime,
             ),
           ],
         ),
