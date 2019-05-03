@@ -24,7 +24,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   intl: ^0.15.7
-  scoped_model: ^0.3.0
+  provider: ^2.0.0+1
   shrine_images: ^1.0.0
 
 dev_dependencies:

@@ -13,7 +13,8 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
 import 'model/product.dart';
 import 'product_row_item.dart';
@@ -78,7 +79,7 @@ class _SearchTabState extends State<SearchTab> {
 
   @override
   Widget build(BuildContext context) {
-    final model = ScopedModel.of<AppStateModel>(context, rebuildOnChange: true);
+    final model = Provider.of<AppStateModel>(context);
 
     return CupertinoTabView(
       builder: (context) {

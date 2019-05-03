@@ -13,15 +13,16 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
 
 class ProductListTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: ScopedModelDescendant<AppStateModel>(
-        builder: (context, child, model) {
+      child: Consumer<AppStateModel>(
+        builder: (context, model, child) {
           return CustomScrollView(
             slivers: const <Widget>[
               CupertinoSliverNavigationBar(

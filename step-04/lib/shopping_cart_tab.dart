@@ -13,7 +13,8 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
 
 class ShoppingCartTab extends StatefulWidget {
@@ -134,12 +135,12 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: ScopedModelDescendant<AppStateModel>(
-        builder: (context, child, model) {
+      child: Consumer<AppStateModel>(
+        builder: (context, model, child) {
           return CustomScrollView(
             slivers: <Widget>[
-              CupertinoSliverNavigationBar(
-                largeTitle: const Text('Shopping Cart'),
+              const CupertinoSliverNavigationBar(
+                largeTitle: Text('Shopping Cart'),
               ),
               SliverSafeArea(
                 top: false,
