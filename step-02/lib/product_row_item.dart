@@ -13,7 +13,8 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
 import 'model/product.dart';
 import 'styles.dart';
@@ -79,7 +80,7 @@ class ProductRowItem extends StatelessWidget {
               semanticLabel: 'Add',
             ),
             onPressed: () {
-              final model = ScopedModel.of<AppStateModel>(context);
+              final model = Provider.of<AppStateModel>(context);
               model.addProductToCart(product.id);
             },
           ),

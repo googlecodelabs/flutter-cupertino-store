@@ -24,15 +24,12 @@ class SearchTab extends StatefulWidget {
 class _SearchTabState extends State<SearchTab> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabView(
-      builder: (context) {
-        return CupertinoPageScaffold(
-          navigationBar: CupertinoNavigationBar(
-            middle: const Text('Search'),
-          ),
-          child: const SizedBox(),
-        );
-      },
+    return CustomScrollView(
+      slivers: const <Widget>[
+        CupertinoSliverNavigationBar(
+          largeTitle: Text('Search'),
+        ),
+      ],
     );
   }
 }

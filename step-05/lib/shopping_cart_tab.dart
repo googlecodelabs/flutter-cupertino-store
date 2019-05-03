@@ -14,7 +14,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
 import 'styles.dart';
 
@@ -185,25 +186,23 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: ScopedModelDescendant<AppStateModel>(
-        builder: (context, child, model) {
-          return CustomScrollView(
-            slivers: <Widget>[
-              CupertinoSliverNavigationBar(
-                largeTitle: const Text('Shopping Cart'),
+    return Consumer<AppStateModel>(
+      builder: (context, model, child) {
+        return CustomScrollView(
+          slivers: <Widget>[
+            const CupertinoSliverNavigationBar(
+              largeTitle: Text('Shopping Cart'),
+            ),
+            SliverSafeArea(
+              top: false,
+              minimum: const EdgeInsets.only(top: 4),
+              sliver: SliverList(
+                delegate: _buildSliverChildBuilderDelegate(model),
               ),
-              SliverSafeArea(
-                top: false,
-                minimum: const EdgeInsets.only(top: 4),
-                sliver: SliverList(
-                  delegate: _buildSliverChildBuilderDelegate(model),
-                ),
-              )
-            ],
-          );
-        },
-      ),
+            )
+          ],
+        );
+      },
     );
   }
 }

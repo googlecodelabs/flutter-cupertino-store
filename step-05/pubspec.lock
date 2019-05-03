@@ -81,6 +81,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.0"
+  provider:
+    dependency: "direct main"
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0+1"
   quiver:
     dependency: transitive
     description:
@@ -88,13 +95,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
-  scoped_model:
-    dependency: "direct main"
-    description:
-      name: scoped_model
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
   shrine_images:
     dependency: "direct main"
     description:

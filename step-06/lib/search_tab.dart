@@ -13,9 +13,9 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
+
 import 'model/app_state_model.dart';
-import 'model/product.dart';
 import 'product_row_item.dart';
 import 'search_bar.dart';
 import 'styles.dart';
@@ -62,44 +62,32 @@ class _SearchTabState extends State<SearchTab> {
     );
   }
 
-  List<Widget> _buildProductRows(List<Product> products) {
-    final productListing = <Widget>[];
-
-    for (var i = 0; i < products.length; i++) {
-      productListing.add(ProductRowItem(
-        index: i,
-        product: products[i],
-        lastItem: i == products.length - 1,
-      ));
-    }
-
-    return productListing;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final model = ScopedModel.of<AppStateModel>(context, rebuildOnChange: true);
+    final model = Provider.of<AppStateModel>(context);
+    final results = model.search(_terms);
 
-    return CupertinoTabView(
-      builder: (context) {
-        return DecoratedBox(
-          decoration: const BoxDecoration(
-            color: Styles.scaffoldBackground,
-          ),
-          child: SafeArea(
-            child: Column(
-              children: [
-                _buildSearchBox(),
-                Expanded(
-                  child: ListView(
-                    children: _buildProductRows(model.search(_terms)),
-                  ),
-                ),
-              ],
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        color: Styles.scaffoldBackground,
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            _buildSearchBox(),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => ProductRowItem(
+                      index: index,
+                      product: results[index],
+                      lastItem: index == results.length - 1,
+                    ),
+                itemCount: results.length,
+              ),
             ),
-          ),
-        );
-      },
+          ],
+        ),
+      ),
     );
   }
 }
