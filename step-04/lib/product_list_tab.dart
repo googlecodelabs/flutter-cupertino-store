@@ -27,8 +27,8 @@ class ProductListTab extends StatelessWidget {
           return CustomScrollView(
             semanticChildCount: products.length,
             slivers: <Widget>[
-              CupertinoSliverNavigationBar(
-                largeTitle: const Text('Cupertino Store'),
+              const CupertinoSliverNavigationBar(
+                largeTitle: Text('Cupertino Store'),
               ),
               SliverSafeArea(
                 top: false,

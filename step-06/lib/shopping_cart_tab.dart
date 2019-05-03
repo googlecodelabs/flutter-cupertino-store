@@ -200,7 +200,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                       children: <Widget>[
                         Text(
                           'Shipping '
-                              '${_currencyFormat.format(model.shippingCost)}',
+                          '${_currencyFormat.format(model.shippingCost)}',
                           style: Styles.productRowItemPrice,
                         ),
                         const SizedBox(height: 6),
@@ -314,7 +314,7 @@ class ShoppingCartItem extends StatelessWidget {
                     ),
                     Text(
                       '${quantity > 1 ? '$quantity x ' : ''}'
-                          '${formatter.format(product.price)}',
+                      '${formatter.format(product.price)}',
                       style: Styles.productRowItemPrice,
                     )
                   ],
