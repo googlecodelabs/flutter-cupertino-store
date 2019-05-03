@@ -28,19 +28,21 @@ class SearchTab extends StatefulWidget {
 }
 
 class _SearchTabState extends State<SearchTab> {
-  final _controller = TextEditingController();
-  final _focusNode = FocusNode();
+  TextEditingController _controller;
+  FocusNode _focusNode;
   String _terms = '';
 
   @override
   void initState() {
     super.initState();
-    _controller.addListener(_onTextChanged);
+    _controller = TextEditingController()..addListener(_onTextChanged);
+    _focusNode = FocusNode();
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -50,7 +52,7 @@ class _SearchTabState extends State<SearchTab> {
     });
   }
 
-  Widget _createSearchBox() {
+  Widget _buildSearchBox() {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: SearchBar(
@@ -60,7 +62,7 @@ class _SearchTabState extends State<SearchTab> {
     );
   }
 
-  List<Widget> _generateProductRows(List<Product> products) {
+  List<Widget> _buildProductRows(List<Product> products) {
     final productListing = <Widget>[];
 
     for (var i = 0; i < products.length; i++) {
@@ -87,10 +89,10 @@ class _SearchTabState extends State<SearchTab> {
           child: SafeArea(
             child: Column(
               children: [
-                _createSearchBox(),
+                _buildSearchBox(),
                 Expanded(
                   child: ListView(
-                    children: _generateProductRows(model.search(_terms)),
+                    children: _buildProductRows(model.search(_terms)),
                   ),
                 ),
               ],

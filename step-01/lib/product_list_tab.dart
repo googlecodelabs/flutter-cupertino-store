@@ -23,9 +23,9 @@ class ProductListTab extends StatelessWidget {
       child: ScopedModelDescendant<AppStateModel>(
         builder: (context, child, model) {
           return CustomScrollView(
-            slivers: <Widget>[
+            slivers: const <Widget>[
               CupertinoSliverNavigationBar(
-                largeTitle: const Text('Cupertino Store'),
+                largeTitle: Text('Cupertino Store'),
               ),
             ],
           );
