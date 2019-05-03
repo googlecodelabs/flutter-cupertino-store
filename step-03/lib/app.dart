@@ -49,13 +49,23 @@ class CupertinoStoreHomePage extends StatelessWidget {
       tabBuilder: (context, index) {
         switch (index) {
           case 0:
-            return ProductListTab();
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: ProductListTab(),
+              );
+            });
           case 1:
-            return SearchTab();
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: SearchTab(),
+              );
+            });
           case 2:
-            return ShoppingCartTab();
-          default:
-            assert(false, 'Unexpected tab index $index');
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                child: ShoppingCartTab(),
+              );
+            });
         }
       },
     );

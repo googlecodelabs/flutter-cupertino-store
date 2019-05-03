@@ -27,18 +27,16 @@ class ShoppingCartTab extends StatefulWidget {
 class _ShoppingCartTabState extends State<ShoppingCartTab> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: Consumer<AppStateModel>(
-        builder: (context, model, child) {
-          return CustomScrollView(
-            slivers: const <Widget>[
-              CupertinoSliverNavigationBar(
-                largeTitle: Text('Shopping Cart'),
-              ),
-            ],
-          );
-        },
-      ),
+    return Consumer<AppStateModel>(
+      builder: (context, model, child) {
+        return CustomScrollView(
+          slivers: const <Widget>[
+            CupertinoSliverNavigationBar(
+              largeTitle: Text('Shopping Cart'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
