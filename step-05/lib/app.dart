@@ -16,20 +16,12 @@ import 'package:flutter/cupertino.dart';
 import 'product_list_tab.dart';
 import 'search_tab.dart';
 import 'shopping_cart_tab.dart';
-import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      title: 'Cupertino Store',
-      theme: const CupertinoThemeData(
-        textTheme: CupertinoTextThemeData(
-          navLargeTitleTextStyle: Styles.headlineText,
-        ),
-      ),
       home: CupertinoStoreHomePage(),
-      color: Styles.appBackground,
     );
   }
 }

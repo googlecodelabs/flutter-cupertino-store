@@ -30,7 +30,7 @@ class _SearchTabState extends State<SearchTab> {
           navigationBar: CupertinoNavigationBar(
             middle: const Text('Search'),
           ),
-          child: Container(),
+          child: const SizedBox(),
         );
       },
     );

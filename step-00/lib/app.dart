@@ -13,20 +13,12 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
-import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      title: 'Cupertino Store',
-      theme: const CupertinoThemeData(
-        textTheme: CupertinoTextThemeData(
-          navLargeTitleTextStyle: Styles.headlineText,
-        ),
-      ),
       home: CupertinoStoreHomePage(),
-      color: Styles.appBackground,
     );
   }
 }
@@ -38,7 +30,7 @@ class CupertinoStoreHomePage extends StatelessWidget {
       navigationBar: CupertinoNavigationBar(
         middle: const Text('Cupertino Store'),
       ),
-      child: Container(),
+      child: const SizedBox(),
     );
   }
 }
