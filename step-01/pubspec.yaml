@@ -17,7 +17,7 @@ description: Creating a Store in Cupertino widgets
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -29,8 +29,6 @@ dependencies:
   shrine_images: ^1.0.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   pedantic: ^1.4.0
 
 flutter:
