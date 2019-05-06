@@ -26,7 +26,7 @@ void main() {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   return runApp(
-    Provider<AppStateModel>(
+    ChangeNotifierProvider<AppStateModel>(
       builder: (context) => AppStateModel()..loadProducts(),
       child: CupertinoStoreApp(),
     ),
