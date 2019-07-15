@@ -14,16 +14,18 @@
 
 include: package:pedantic/analysis_options.yaml
 
+# For information on lints, please see https://dart-lang.github.io/linter/lints/
 linter:
   rules:
     - always_declare_return_types
     - always_put_control_body_on_new_line
     - always_put_required_named_parameters_first
     - always_require_non_null_named_parameters
-    #- always_specify_types
+    # Not for app code
+    # - always_specify_types
     - annotate_overrides
     - avoid_annotating_with_dynamic
-    #- avoid_as
+    - avoid_as
     - avoid_bool_literals_in_conditional_expressions
     - avoid_catches_without_on_clauses
     - avoid_catching_errors
@@ -56,7 +58,7 @@ linter:
     - await_only_futures
     - camel_case_types
     - cancel_subscriptions
-    #- cascade_invocations
+    # - cascade_invocations
     - close_sinks
     - comment_references
     - constant_identifier_names
@@ -93,7 +95,7 @@ linter:
     - parameter_assignments
     - prefer_adjacent_string_concatenation
     - prefer_asserts_in_initializer_lists
-    #- prefer_asserts_with_message
+    - prefer_asserts_with_message
     - prefer_collection_literals
     - prefer_conditional_assignment
     - prefer_const_constructors
@@ -102,8 +104,11 @@ linter:
     - prefer_const_literals_to_create_immutables
     - prefer_constructors_over_static_methods
     - prefer_contains
+    # Actually I prefer single quotes
+    # - prefer_double_quotes
     - prefer_equal_for_default_values
-    #- prefer_expression_function_bodies
+    # Expression bodies are harder to parse on first glance
+    # - prefer_expression_function_bodies
     - prefer_final_fields
     - prefer_final_in_for_each
     - prefer_final_locals
@@ -112,6 +117,7 @@ linter:
     - prefer_function_declarations_over_variables
     - prefer_generic_function_type_aliases
     - prefer_if_elements_to_conditional_expressions
+    - prefer_if_null_operators
     - prefer_initializing_formals
     - prefer_inlined_adds
     - prefer_int_literals
@@ -126,9 +132,11 @@ linter:
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
     - provide_deprecation_message
-    #- public_member_api_docs
+    # Not for sample code
+    # - public_member_api_docs
     - recursive_getters
     - slash_for_doc_comments
+    - sort_child_properties_last
     - sort_constructors_first
     - sort_pub_dependencies
     - sort_unnamed_constructors_first
@@ -150,6 +158,7 @@ linter:
     - unnecessary_statements
     - unnecessary_this
     - unrelated_type_equality_checks
+    - unsafe_html
     - use_full_hex_values_for_flutter_colors
     - use_function_type_syntax_for_parameters
     - use_rethrow_when_possible
