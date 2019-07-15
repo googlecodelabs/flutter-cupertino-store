@@ -28,11 +28,11 @@ class Product {
     @required this.isFeatured,
     @required this.name,
     @required this.price,
-  })  : assert(category != null),
-        assert(id != null),
-        assert(isFeatured != null),
-        assert(name != null),
-        assert(price != null);
+  })  : assert(category != null, 'category must not be null'),
+        assert(id != null, 'id must not be null'),
+        assert(isFeatured != null, 'isFeatured must not be null'),
+        assert(name != null, 'name must not be null'),
+        assert(price != null, 'price must not be null');
 
   final Category category;
   final int id;
