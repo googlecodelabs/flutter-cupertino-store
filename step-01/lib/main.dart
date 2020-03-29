@@ -27,7 +27,7 @@ void main() {
 
   return runApp(
     ChangeNotifierProvider<AppStateModel>(
-      builder: (context) => AppStateModel()..loadProducts(),
+      create: (context) => AppStateModel()..loadProducts(),
       child: CupertinoStoreApp(),
     ),
   );
