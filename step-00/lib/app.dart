@@ -13,10 +13,16 @@
 // limitations under the License.
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // This app is designed only to work vertically, so we limit
+    // orientations to portrait up and down.
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
     return CupertinoApp(
       home: CupertinoStoreHomePage(),
     );
@@ -26,11 +32,11 @@ class CupertinoStoreApp extends StatelessWidget {
 class CupertinoStoreHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
+    return const CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: const Text('Cupertino Store'),
+        middle: Text('Cupertino Store'),
       ),
-      child: const SizedBox(),
+      child: SizedBox(),
     );
   }
 }
