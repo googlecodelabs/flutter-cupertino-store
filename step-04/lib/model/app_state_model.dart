@@ -49,7 +49,7 @@ class AppStateModel extends foundation.ChangeNotifier {
   double get subtotalCost {
     return _productsInCart.keys.map((id) {
       // Extended price for product line
-      return _availableProducts[id].price * _productsInCart[id];
+      return getProductById(id).price * _productsInCart[id];
     }).fold(0, (accumulator, extendedPrice) {
       return accumulator + extendedPrice;
     });
