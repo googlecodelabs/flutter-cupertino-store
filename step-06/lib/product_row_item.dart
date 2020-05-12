@@ -76,7 +76,7 @@ class ProductRowItem extends StatelessWidget {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              final model = Provider.of<AppStateModel>(context);
+              final model = Provider.of<AppStateModel>(context, listen: false);
               model.addProductToCart(product.id);
             },
             child: const Icon(
