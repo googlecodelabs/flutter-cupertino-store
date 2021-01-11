@@ -39,6 +39,7 @@ class SearchBar extends StatelessWidget {
                 focusNode: focusNode,
                 style: Styles.searchText,
                 cursorColor: Styles.searchCursorColor,
+                decoration: null,
               ),
             ),
             GestureDetector(
