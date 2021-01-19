@@ -1,4 +1,8 @@
-# Flutter Cupertino Store
+# Deprecated location
+
+This codelab repository has been moved to [flutter/codelabs](https://github.com/flutter/codelabs/tree/master/cupertino_store). Thanks!
+
+## Flutter Cupertino Store
 
 Ever wanted to create a store app in Flutter that looks totally at home on an 
 iOS device? Do we have a deal for you! [Cupertino Widgets][cupertino-widgets] 
